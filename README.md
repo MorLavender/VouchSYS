@@ -20,3 +20,6 @@ How It Works:
 
 6. Save & Enjoy: 
    Maximize your value without changing your habits.
+
+   <img width="652" alt="image" src="https://github.com/user-attachments/assets/71d40b2e-6c66-4778-9cc6-7abb789e4855" />
+
