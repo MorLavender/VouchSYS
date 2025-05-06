@@ -35,13 +35,20 @@ How It Works:
 
    Generating visual insights using matplotlib.
 
-It assumes you're storing gift cards and transactions in PostgreSQL, and will use psycopg2 and matplotlib.
 
 4. Auto-Sync & Update:
    Balances and expiration dates update automatically.
    Track spending history with visual insights.
 
-5. AI-Powered Recommendations: 
+   🔄 Features
+   
+    ✅ Auto-sync: Simulates external updates every 10 seconds.
+
+    ✅ Tracking: Records all transactions in a transactions table.
+
+    ✅ Insights: Saves a daily spending chart using matplotlib.
+
+6. AI-Powered Recommendations: 
    Discover matching deals based on your shopping patterns and favorite stores.
 
 4. Stay Notified: 
