@@ -5,11 +5,43 @@ How It Works:
 1. Register & Upload:
    Snap a photo, scan, or import your gift cards, loyalty points, or coupons.
 
-3. Auto-Sync & Update:
+   <img width="652" alt="image" src="https://github.com/user-attachments/assets/71d40b2e-6c66-4778-9cc6-7abb789e4855" />
+
+2. Auto-Sync & Update: Balances and expiration dates update automatically. Track spending history with visual insights.
+   Auto-sync and update of gift card balances and expiration dates (e.g., from a mock external API).
+   ✅ Step 1: Install Required Packages
+   
+   ```pip install psycopg2 matplotlib schedule```
+   
+   ✅ Step 2: Database Schema (PostgreSQL)
+   
+  ` CREATE TABLE gift_cards (
+      id UUID PRIMARY KEY,
+     name TEXT NOT NULL,
+     balance NUMERIC NOT NULL,
+     expiry DATE NOT NULL
+   );`
+
+
+   `CREATE TABLE transactions (
+        id SERIAL PRIMARY KEY,
+        gift_card_id UUID REFERENCES gift_cards(id),
+        amount NUMERIC NOT NULL,
+        date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   );`
+
+
+   Tracking spending history.
+
+   Generating visual insights using matplotlib.
+
+It assumes you're storing gift cards and transactions in PostgreSQL, and will use psycopg2 and matplotlib.
+
+4. Auto-Sync & Update:
    Balances and expiration dates update automatically.
    Track spending history with visual insights.
 
-4. AI-Powered Recommendations: 
+5. AI-Powered Recommendations: 
    Discover matching deals based on your shopping patterns and favorite stores.
 
 4. Stay Notified: 
@@ -20,6 +52,4 @@ How It Works:
 
 6. Save & Enjoy: 
    Maximize your value without changing your habits.
-
-   <img width="652" alt="image" src="https://github.com/user-attachments/assets/71d40b2e-6c66-4778-9cc6-7abb789e4855" />
 
