@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-05-07T15:00:00Z",
+  "user": {
+    "user_id": "user-00123",
+    "role": "contributor",
+    "session_id": "sess-78910",
+    "ip_address": "192.168.1.100",
+    "geo_location": {
+      "country": "US",
+      "region": "California",
+      "city": "Berkeley"
+    }
+  },
+  "interaction": {
+    "interaction_id": "int-45678",
+    "action": "submit_vouch",
+    "target_user_id": "user-00456",
+    "vouch_type": "credibility",
+    "vouch_content_hash": "sha256:abc123...",
+    "context": "academic_reference"
+  },
+  "verification": {
+    "status": "success",
+    "method": "peer-network",
+    "verifier_ids": ["user-00111", "user-00222"],
+    "verification_time_ms": 842,
+    "automated_check": {
+      "model": "vouchnet-v2",
+      "confidence_score": 0.94,
+      "reasoning": "Consistent historical endorsements + match with verified sources"
+    }
+  },
+  "trust_score": {
+    "before": 0.72,
+    "after": 0.85,
+    "delta": 0.13,
+    "change_reason": "high-confidence peer vouch accepted",
+    "global_rank_change": 12
+  },
+  "system_metrics": {
+    "cpu_usage_percent": 23.5,
+    "memory_usage_mb": 1456,
+    "disk_io_mb_s": 3.8,
+    "uptime_minutes": 19403,
+    "error_rate_percent": 0.02
+  },
+  "model_performance": {
+    "model_name": "vouchnet-v2",
+    "latency_ms": 127,
+    "inference_accuracy": 0.96,
+    "false_positive_rate": 0.04,
+    "false_negative_rate": 0.01
+  },
+  "audit_log": {
+    "log_id": "log-93284",
+    "event_type": "vouch_submission",
+    "event_source": "web_app",
+    "initiated_by": "user-00123",
+    "signed_checksum": "sha256:logsig9823abc...",
+    "compliance_flags": ["GDPR-logged", "SOC2-traceable"]
+  }
+}
