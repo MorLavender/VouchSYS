@@ -1,0 +1,142 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "VouchSys CI/CD Infrastructure API",
+    "version": "1.0.0",
+    "description": "API to manage environments, deployments, secrets, and status for platform-agnostic CI/CD infrastructure."
+  },
+  "servers": [
+    {
+      "url": "https://api.vouchsys.io/v1"
+    }
+  ],
+  "paths": {
+    "/environments": {
+      "post": {
+        "summary": "Create Environment",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "branch": {
+                    "type": "string"
+                  },
+                  "project_id": {
+                    "type": "string"
+                  },
+                  "template": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "branch",
+                  "project_id",
+                  "template"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Environment created"
+          }
+        }
+      }
+    },
+    "/deployments": {
+      "post": {
+        "summary": "Trigger Deployment",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "environment_id": {
+                    "type": "string"
+                  },
+                  "image_tag": {
+                    "type": "string"
+                  },
+                  "secrets": {
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "environment_id",
+                  "image_tag"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Deployment triggered"
+          }
+        }
+      }
+    },
+    "/secrets": {
+      "post": {
+        "summary": "Inject Secrets",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "environment_id": {
+                    "type": "string"
+                  },
+                  "secrets": {
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "environment_id",
+                  "secrets"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Secrets injected"
+          }
+        }
+      }
+    },
+    "/status/{environment_id}": {
+      "get": {
+        "summary": "Get Deployment Status",
+        "parameters": [
+          {
+            "name": "environment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status retrieved"
+          }
+        }
+      }
+    }
+  }
+}
