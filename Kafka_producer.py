@@ -12,7 +12,7 @@ from opentelemetry.sdk._logs import LoggerProvider, LoggingHandler
 from opentelemetry.sdk._logs.export import BatchLogRecordProcessor, ConsoleLogExporter
 import logging
 
-# Set up OpenTelemetry resource
+# Set up OpenTelemetry resource for observability 
 resource = Resource(attributes={
     "service.name": "vouchsys-metrics-producer"
 })
