@@ -23,7 +23,7 @@ tracer = trace.get_tracer(__name__)
 span_processor = SimpleSpanProcessor(ConsoleSpanExporter())
 trace.get_tracer_provider().add_span_processor(span_processor)
 
-# Setup metrics
+# Setup metrics for reader
 reader = PeriodicExportingMetricReader(ConsoleMetricExporter())
 metrics.set_meter_provider(MeterProvider(resource=resource, metric_readers=[reader]))
 meter = metrics.get_meter(__name__)
