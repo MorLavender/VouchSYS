@@ -2,6 +2,7 @@
 *VouchSys is an intelligent, user-owned platform designed to transform how individuals store, retrieve, and utilize voucher-like information, including gift cards, discount codes, certifications, or personalized credentials — using AI-driven evidence parsing and context-aware statement generation. This research explores the system architecture for real-time retrieval of personalized "vouches" from semi-structured evidence using embedding-based clustering, large language models (LLMs), and user-controlled knowledge repositories. We describe our implementation pipeline and early evaluations based on user interaction simulations, showing promising results for statement relevancy and retrieval efficiency. The paper also highlights practical implications in domains such as job seeking, education, and digital commerce.*
 
 How It Works:
+*You have to configure before starting*
 1. Register & Upload:
    Snap a photo, scan, or import your gift cards, loyalty points, or coupons.
 
